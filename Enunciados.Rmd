@@ -32,3 +32,28 @@ En el caso de q no juegue ningún momento, en el primer caso le devuelven el din
 caso obtendrá el triple de lo invertido al ser la mas arriesgada. Por ultimo, si no ocurre eso si no que ocurre el doble, es decir, si marca dos goles, o provoca 2 amarillas, etc. En el primer caso obtiene el doble de lo invertido, en el segundo caso obtiene lo mismo q gano en el anterior estado de la naturaleza, en el tercer caso
 gana el 150% de lo invertido y en el ultimo caso gana 5 veces lo invertido.
 
+# Problemas Filomeno Aspe Moreno
+
+## Problema 1
+La matriz está definida como:
+    a1  a2  a3   
+d1  10  8   6 
+d2  5   12  7 
+d3  8   6   9 
+d4  4   10  11
+
+## Problema 2 
+
+Un restaurante necesita decidir entre tres tipos de menú para ofrecer a sus clientes, dependiendo de la demanda esperada para las próximas temporadas.
+Menús a elegir:
+-Menú Tradicional.
+-Menú Saludable.
+-Menú Vegetariano.
+Escenarios de demanda:
+-Alta.
+-Media.
+-Baja.
+Para el Menú Tradicional, en un escenario de demanda alta, se espera un beneficio de 30 mil euros, con una demanda media, el beneficio es de 20 mil euros, y en una demanda baja, de 10 mil euros.
+Para el Menú Saludable, los beneficios esperados son de 40 mil euros con demanda alta, 30 mil euros con demanda media, y 15 mil euros con demanda baja.
+Finalmente, para el Menú Vegetariano, se esperan 50 mil euros en demanda alta, 25 mil euros con demanda media, y 5 mil euros en un escenario de demanda baja.
+
