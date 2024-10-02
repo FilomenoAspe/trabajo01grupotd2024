@@ -124,3 +124,151 @@ criterio.Todos(tabla2,alfa = 0.5)
 ```
 Si observamos la salida q nos proporciona esta función, todos los criterios excepto el de Wald, que nos dice que la mejor opción es elegir el primer caso, el resto de criterios nos dice q la mejor opción es tomar la decisión 4, por lo que en caso de tener que aconsejar a Pablo, en caso de ser precavidos le aconsejaríamos
 que la mejor opción es la decisión 1 (aunque Savage da la decisión 4 como la mejor), y en caso de ser optimista le aconsejariamos que tomara la 4ª decision
+
+
+
+# Resolucion problemas Filomeno Aspe Moreno
+## Problema 1
+Matriz  
+```{r,echo=FALSE}
+tabla1= crea.tablaX(c(10,8,6,
+                      5,12,7,
+                      8,6,9,
+                      4,10,11),4,3)
+```
+# Resolucion por todos los métodos de los beneficios (situación favorable)
+
+Pesimista
+```{r}
+p1_pes = criterio.Wald(tabla1,T)
+names(p1_pes$AlternativaOptima)
+```
+
+Optimista
+```{r}
+p1_opt = criterio.Optimista(tabla1,T)
+names(p1_opt$AlternativaOptima)
+```
+
+Hurwicz
+```{r}
+p1_hur = criterio.Hurwicz(tabla1,T)
+names(p1_hur$AlternativaOptima)
+```
+
+Savage
+```{r}
+p1_savage = criterio.Savage(tabla1,T)
+names(p1_savage$AlternativaOptima)
+```
+
+Laplace
+```{r}
+p1_laplace = criterio.Laplace(tabla1,T)
+names(p1_laplace$AlternativaOptima)
+```
+
+Punto ideal
+```{r}
+p1_puntoideal = criterio.PuntoIdeal(tabla1,T)
+names(p1_puntoideal$AlternativaOptima)
+```
+
+Resumen de todos
+```{r}
+p1_todos = criterio.Todos(tabla1,alfa=0.5, T)
+p1_todos
+```
+
+CONCLUSION
+Hemos realizado todos los metodos de incertidumbre por separado y los visualizamos todos juntos
+con el criterio todos.
+Llegamos a la conclusion de que la alternativa d2 es la alternativa optima ya que 3 de los 6 metodos
+la eligen como la optima siendo todas las otras alternativas menos elegidas que d2.
+Como no tenemos un contexto del problema, no podemos decir más.
+
+# Resolucion por todos los métodos de los costes (situación desfavorable)
+Pesimista
+```{r}
+p1_pes = criterio.Wald(tabla1,F)
+names(p1_pes$AlternativaOptima)
+```
+
+Optimista
+```{r}
+p1_opt = criterio.Optimista(tabla1,F)
+names(p1_opt$AlternativaOptima)
+```
+
+Hurwicz
+```{r}
+p1_hur = criterio.Hurwicz(tabla1,F)
+names(p1_hur$AlternativaOptima)
+```
+
+Savage
+```{r}
+p1_savage = criterio.Savage(tabla1,F)
+names(p1_savage$AlternativaOptima)
+```
+
+Laplace
+```{r}
+p1_laplace = criterio.Laplace(tabla1,F)
+names(p1_laplace$AlternativaOptima)
+```
+
+Punto ideal
+```{r}
+p1_puntoideal = criterio.PuntoIdeal(tabla1,F)
+names(p1_puntoideal$AlternativaOptima)
+```
+
+Resumen de todos
+```{r}
+p1_todos = criterio.Todos(tabla1,alfa=0.5, F)
+p1_todos
+```
+CONCLUSION
+Hemos realizado todos los metodos de incertidumbre por separado y los visualizamos todos juntos
+con el criterio todos.
+Llegamos a la conclusion de que la alternativa d3 es la alternativa optima ya que 5 de los 6 metodos
+la eligen como la optima.
+
+## Problema 2
+Un restaurante necesita decidir entre tres tipos de menú para ofrecer a sus clientes, 
+dependiendo de la demanda esperada para las próximas temporadas.
+
+Menús a elegir:
+-Menú Tradicional.
+-Menú Saludable.
+-Menú Vegetariano.
+
+Escenarios de demanda:
+-Alta.
+-Media.
+-Baja.
+
+Para el Menú Tradicional, en un escenario de demanda alta, se espera un beneficio de 30 mil euros, 
+con una demanda media, el beneficio es de 20 mil euros, y en una demanda baja, de 10 mil euros.
+Para el Menú Saludable, los beneficios esperados son de 40 mil euros con demanda alta, 30 mil euros con 
+demanda media, y 15 mil euros con demanda baja.
+Finalmente, para el Menú Vegetariano, se esperan 50 mil euros en demanda alta, 25 mil euros con demanda 
+media, y 5 mil euros en un escenario de demanda baja. 
+
+```{r,echo=FALSE}
+tabla3=crea.tablaX(c(30,20,10,
+                     40,30,15,
+                     50,25,5),3,3)
+```
+
+Resolvemos con la función de todos
+```{r}
+p3_todos = criterio.Todos(tabla3,alfa=0.5, T)
+p3_todos
+```
+
+CONCLUSION
+En esta ocasion utilizamos directamente el criterio de todos, este nos muestra que para 5 de los 6, d2 es
+la mejor opcion y, para 3 de ellos, lo es d3. Por tanto, la opción idonea sera d2 que es el menú saludable.
+La única excepción en la que recomendaría que la decición fuera d3, sería si supiéramos que el restaurante es optimista.
