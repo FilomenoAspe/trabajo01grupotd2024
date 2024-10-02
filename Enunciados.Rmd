@@ -9,3 +9,26 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Problemas Carlos Manzano Diaz
+
+## Problema 1
+En este caso al ser un problema q no necesita enunciado dare unicamente la matriz
+de decisiones y estados de la naturaleza
+
+    a1  a2  a3  a4  
+d1  1   2   0   8
+d2  -2  5   4   1
+d3  0   6   3   2
+d4  9   4   1   5
+
+## Problema 2
+
+Pablo tiene 20 euros para apostar esta semana en una casa de apuestas. Como el fútbol es su deporte 
+favorito lo va a invertir en un partido de fútbol. Como sabe que con 20 euros si juega a algo seguro no va a ganar mucho se plantea hacer una apuesta arriesgada, pero no sabe cual.
+Su primera opción es invertir a que un jugador va a marcar 1 gol, otra es q va a provocar una amarilla,
+otra que no hará ni una sola falta y otra que es la mas arriesgada que consiste en que le van a sacar a el una tarjeta amarilla.
+Se pueden dar una serie de situaciones en las q según ocurra ganara mas o menos:
+En el caso de q no juegue ningún momento, en el primer caso le devuelven el dinero, en el segundo le devuelven la mitad y en los otros dos lo pierde todo. En el caso de que el entrenador lo relegue al banquillo antes de que cumpla con los requisitos, en el primer caso obtiene la mitad de lo que hay invertido en ganancias, en el segundo caso le reembolsan el dinero. En caso de que cumpla el objetivo, en el primer caso obtiene de ganancias lo que invirtió, en el segundo caso obtendrá un 150% del valor invertido, en el 3 caso un 125% y en el ultimo
+caso obtendrá el triple de lo invertido al ser la mas arriesgada. Por ultimo, si no ocurre eso si no que ocurre el doble, es decir, si marca dos goles, o provoca 2 amarillas, etc. En el primer caso obtiene el doble de lo invertido, en el segundo caso obtiene lo mismo q gano en el anterior estado de la naturaleza, en el tercer caso
+gana el 150% de lo invertido y en el ultimo caso gana 5 veces lo invertido.
+

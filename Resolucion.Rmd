@@ -9,22 +9,118 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+# Resolucion problemas Carlos Manzano Diaz
+## Problema 1
+En este caso al ser un problema q no necesita enunciado dare unicamente la matriz
+de decisiones y estados de la naturaleza
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+    a1  a2  a3  a4  
+d1  1   2   0   8
+d2  -2  5   4   1
+d3  0   6   3   2
+d4  9   4   1   5
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+En primer lugar cargamos la tabla de decisiones y estados de la naturaleza
+```{r,echo=FALSE}
+(tabla1=crea.tablaX(c(1,2,0,8,
+              -2,5,4,1,
+              0,6,3,2,
+              9,4,1,5),
+            numalternativas = 4,
+            numestados = 4))
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+### Resolucion problema 1 : situacion favorable
+```{r,echo=FALSE}
+criterio.Wald(tabla1)
 ```
+Nos da que la mejor opcion es la decision 4
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r,echo=FALSE}
+criterio.Optimista(tabla1)
+```
+El criterio optimista nos da que la decisión 4 es la mejor opción
+
+```{r,echo=FALSE}
+criterio.PuntoIdeal(tablaX = tabla1)
+```
+Segun este criterio la mejor decision es la 4
+
+```{r,echo=FALSE}
+criterio.Savage(tabla1)
+```
+el criterio de savage tambien nos da la decision 4 como la mas recomendada
+
+```{r,echo=FALSE}
+criterio.Laplace(tabla1)
+```
+el criterio de laplace nos da la decision 4 como la mejor
+
+```{r}
+dibuja.criterio.Hurwicz(tablaX = tabla1)
+```
+Como podemos observar, para todo alfa entre 0 y 1 la mejor decision es la 4
+
+En resumen, la decision 4 es la mas recomendable (todos los metodos la dan como mejor decision)
+
+### Resolucion problema 2 : situacion desfavorable
+En este caso la tabla sera de costos y no de beneficios como antes
+
+```{r,echo=FALSE}
+criterio.Wald(tabla1,favorable = F)
+```
+La mejor decision segun el criterio de wald es la 2
+
+```{r,echo=FALSE}
+criterio.Laplace(tabla1,favorable = F)
+```
+La mejor decision es la 2 segun el criterio de Laplace
+
+```{r,echo=FALSE}
+criterio.Optimista(tabla1,favorable = F)
+```
+La mejor decision segun este criterio es la 2
+
+```{r}
+criterio.Savage(tabla1,favorable = F)
+```
+Este criterio nos da como mejores opciones la 2 y la 3
+
+```{r,echo=FALSE}
+criterio.PuntoIdeal(tablaX = tabla1,favorable = F)
+```
+Segun este criterio la mejor opcion es la decision 2
+
+```{r,echo=FALSE}
+dibuja.criterio.Hurwicz(tablaX = tabla1,favorable = F)
+```
+La mejor decision es la 2
+
+## Problema 2
+
+Pablo tiene 20 euros para apostar esta semana en una casa de apuestas. Como el fútbol es su deporte 
+favorito lo va a invertir en un partido de fútbol. Como sabe que con 20 euros si juega a algo seguro no va a ganar mucho se plantea hacer una apuesta arriesgada, pero no sabe cual.
+Su primera opción es invertir a que un jugador va a marcar 1 gol, otra es q va a provocar una amarilla,
+otra que no hará ni una sola falta y otra que es la mas arriesgada que consiste en que le van a sacar a el una tarjeta amarilla.
+Se pueden dar una serie de situaciones en las q según ocurra ganara mas o menos:
+En el caso de q no juegue ningún momento, en el primer caso le devuelven el dinero, en el segundo le devuelven la mitad y en los otros dos lo pierde todo. En el caso de que el entrenador lo relegue al banquillo antes de que cumpla con los requisitos, en el primer caso obtiene la mitad de lo que hay invertido en ganancias, en el segundo caso le reembolsan el dinero,en el tercero pierde la mitad y en el ultimo vuelve a perderlo todo. En caso de que cumpla el objetivo, en el primer caso obtiene de ganancias lo que invirtió, en el segundo caso obtendrá un 150% del valor invertido, en el 3 caso un 125% y en el ultimo
+caso obtendrá el triple de lo invertido al ser la mas arriesgada. Por ultimo, si no ocurre eso si no que ocurre el doble, es decir, si marca dos goles, o provoca 2 amarillas, etc. En el primer caso obtiene el doble de lo invertido, en el segundo caso obtiene lo mismo q gano en el anterior estado de la naturaleza, en el tercer caso
+gana el 150% de lo invertido y en el ultimo caso gana 5 veces lo invertido.
+
+### Resolucion problema 2
+
+En primer lugar vamos a calcular los coeficientes de la matriz de decisiones-estados de la naturaleza para
+a continuacion crear la tabla
+```{r,echo=FALSE}
+a11=0; a21=-10 ;a31=-20; a41=-20
+a12=10; a22=0; a32=-10; a42=-20
+a13=10; a23=30; a33=25; a43=60
+a14=20; a24=30; a34=30; a44=100
+(tabla2=crea.tablaX(c(a11,a12,a13,a14,a21,a22,a23,a24,a31,a32,a33,a34,a41,a42,a43,a44),numalternativas = 4,numestados = 4))
+```
+A continuacion resolveremos el problema con la funcion q calcula todos los criterios
+```{r}
+criterio.Todos(tabla2,alfa = 0.5)
+```
+Si observamos la salida q nos proporciona esta función, todos los criterios excepto el de Wald, que nos dice que la mejor opción es elegir el primer caso, el resto de criterios nos dice q la mejor opción es tomar la decisión 4, por lo que en caso de tener que aconsejar a Pablo, en caso de ser precavidos le aconsejaríamos
+que la mejor opción es la decisión 1 (aunque Savage da la decisión 4 como la mejor), y en caso de ser optimista le aconsejariamos que tomara la 4ª decision
