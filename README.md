@@ -14,6 +14,6 @@ ORGANIZACIÓN:
 En el repositorio aparecen los siguientes archivos de R:
 
 - "Enunciados.Rmd" donde se pueden ver los enunciados de nuestros problemas
-- "Soluciones.Rmd" donde aparecen los enunciados junto con sus soluciones
+- "Resolucion.Rmd" donde aparecen los enunciados junto con sus soluciones
 - "teoriadecision_funciones_incertidumbre.R" donde aparecen las funciones con las que he resuelto los problemas
 
