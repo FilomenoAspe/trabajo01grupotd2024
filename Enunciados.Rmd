@@ -57,3 +57,36 @@ Para el Menú Tradicional, en un escenario de demanda alta, se espera un benefic
 Para el Menú Saludable, los beneficios esperados son de 40 mil euros con demanda alta, 30 mil euros con demanda media, y 15 mil euros con demanda baja.
 Finalmente, para el Menú Vegetariano, se esperan 50 mil euros en demanda alta, 25 mil euros con demanda media, y 5 mil euros en un escenario de demanda baja.
 
+
+# Problemas Laura Boza Molinillo
+
+## Problema 1
+
+Sea la tabla de decisión con 5 estados de la naturaleza y 4 alternativas de la siguiente forma:
+
+    a1  a2  a3  a4  a5
+d1  5   4   6   2   3
+d2  1   7   8   7   5
+d3  2   0   8   9   5
+d4  4   3  -1   9  10
+
+Resolverla tanto para situación favorable como desfavorable, con cada uno de los criterios por separado.
+
+## Problema 2
+
+Un chef está experimentando con diferentes ingredientes y métodos de cocción para preparar 
+un nuevo plato. Tiene cuatro posibles ingredientes principales: pollo (d1), pescado (d2), 
+champiñones (d3) y ternera (d4). Además, tiene cuatro métodos de cocción: asado (e1), frito (e2), 
+al vapor (e3) y a la parrilla (e4). Dependiendo de la combinación de ingrediente y método de 
+cocción, el tiempo total de preparación (en minutos) varía según la siguiente tabla:
+
+    e1  e2  e3  e4
+d1  45  30  25  50
+d2  35  20  30  40
+d3  25  15  20  35
+d4  50  40  30  60
+
+Resolverla con la función que devuelve la resolución de todos los métodos en una única tabla.
+¿Qué ingrediente le recomendarías al chef?
+
+
