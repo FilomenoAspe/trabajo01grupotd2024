@@ -90,3 +90,37 @@ Resolverla con la función que devuelve la resolución de todos los métodos en 
 ¿Qué ingrediente le recomendarías al chef?
 
 
+# Enunciados problemas Alicia Hidalgo Jiménez
+
+## Problema 1
+**Tabla de decisión:**
+
+|     | a1  | a2  | a3  | a4  |
+|-----|-----|-----|-----|-----|
+| d1  |  3  |  1  |  7  |  1  |
+| d2  |  4  |  5  |  2  |  3  |
+| d3  |  6  |  2  |  7  | 10  |
+| d4  |  9  |  8  |  4  |  5  |
+| d5  | 10  |  6  |  9  |  8  |
+
+**Resuelve el problema con cada uno de los métodos de incertidumbre vistos en clase. Indica cuál es la decisión final.**  
+
+## Problema 2
+**Vicente es agricultor y tiene que tomar una decisión respecto a su próxima siembra. Tiene tres posibles cultivos para sembrar:**
+
+- Trigo (d1): Necesita bastante agua pero es más resistente a variaciones.
+- Maíz (d2): Requiere un clima seco pero puede adaptarse a otros climas.
+- Soja (d3): Se beneficia especialmente de un clima moderado.
+
+**El tiempo puede ser lluvioso (e1) si se espera mucha lluvia, seco (e2) si lloverá poco a lo largo del año, o moderado (e3) si el tiempo no será ni muy húmedo ni muy seco y dependiendo de la combinación cultivo-clima, sus ganancias serán diferentes.**  
+
+**En esta matriz se reflejan las ganancias (en miles de euros):**
+
+|     | a1   | a2   | a3   |
+|-----|------|------|------|
+| d1  |  15  |  4   |  8   |
+| d2  |  6   |  12  |  10  |
+| d3  |  10  |  6   |  14  |
+
+**¿Qué cultivo recomendarías a Vicente?**
+
